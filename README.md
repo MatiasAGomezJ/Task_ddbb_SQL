@@ -31,3 +31,9 @@ DELETE FROM Reserva WHERE ID=Z23456K;
 DELETE FROM Passatger WHERE ID=Z23456K;
 ```
 ![image](https://user-images.githubusercontent.com/91556480/166714252-b72a80cf-2702-429c-862d-acadc285faff.png)
+
+## Task 6
+```sql
+SELECT MAX(Arrivals.CountArrivals) AS 'MaxCountArrivals' FROM (SELECT COUNT(NomAerDesti) AS 'CountArrivals' FROM Vol GROUP BY NomAerDesti) Arrivals;
+```
+![image](https://user-images.githubusercontent.com/91556480/166721191-de87b05e-430a-454e-a803-78a7798a90d4.png)
