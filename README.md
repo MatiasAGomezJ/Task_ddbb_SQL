@@ -27,13 +27,24 @@ DELETE FROM Passatger WHERE ID=Z23456K;
 
 ## Task 5
 ```sql
-DELETE FROM Reserva WHERE ID=Z23456K;
-DELETE FROM Passatger WHERE ID=Z23456K;
+SELECT Ciutat 
+FROM Aeroport 
+WHERE NomAeroport 
+IN (
+  SELECT NomAerOrigen 
+  FROM Vol 
+  WHERE NomCo='Iberia'
+);
 ```
 ![image](https://user-images.githubusercontent.com/91556480/166714252-b72a80cf-2702-429c-862d-acadc285faff.png)
 
 ## Task 6
 ```sql
-SELECT MAX(Arrivals.CountArrivals) AS 'MaxCountArrivals' FROM (SELECT COUNT(NomAerDesti) AS 'CountArrivals' FROM Vol GROUP BY NomAerDesti) Arrivals;
+SELECT MAX(Arrivals.CountArrivals) AS 'MaxCountArrivals' 
+FROM (
+  SELECT COUNT(NomAerDesti) AS 'CountArrivals' 
+  FROM Vol 
+  GROUP BY NomAerDesti
+) Arrivals;
 ```
 ![image](https://user-images.githubusercontent.com/91556480/166721191-de87b05e-430a-454e-a803-78a7798a90d4.png)
